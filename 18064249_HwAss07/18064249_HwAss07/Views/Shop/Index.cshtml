@@ -1,28 +1,37 @@
-﻿
-@{
+﻿@using _18064249_HwAss07.ViewModel
+@model List<ShowItemViewModel>
+
+{
     ViewBag.Title = "Index";
 }
 
-<h2>Drug Store</h2>
+@using (Html.BeginForm())
+{
+    <h2>Drug Store</h2>
+    <br />
+    <button onclick="location.href='@Url.Action("AddItem","Shop")';return false;">Add Item</button>
 <br />
-<input type="button" formaction="AddItem" name="AddItemView" value="ADD"/><br />
-<a href="">Part 2....</a><br />
-
-<table>
-    <tr>
-        <th>Name</th>
-        <th>Description</th>
-        <th>Price</th>
-        <th>Quantity Available</th>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-</table>
-<input type="button" value="Sort by Name" formaction="SortName" />
-<input type="button" value="Sort by Price" formaction="SortPrice" />
-<input type="button" value="Sort by Quantity" formaction="SortQuantity" />
-<input type="button" value="Total items" formaction="TotalItems" />
+    <a href="">Part 2....</a><br />
+    @foreach (var x in Model)
+    {
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Quantity Available</th>
+            </tr>
+            <tr>
+                <td>@x.Name</td>
+                <td>@x.Description</td>
+                <td>@x.Price</td>
+                <td>@x.QuantityAvailable</td>
+            </tr>
+        </table>
+    }
+    <br />
+    <input type="button" value="Sort by Name" formaction="SortName" />
+    <input type="button" value="Sort by Price" formaction="SortPrice" />
+    <input type="button" value="Sort by Quantity" formaction="SortQuantity" />
+    <input type="button" value="Total items" formaction="TotalItems" />
+}

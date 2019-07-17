@@ -1,0 +1,22 @@
+﻿@using _18064249_HwAss07.ViewModel
+@model List<ShowItemViewModel>
+@{
+    ViewBag.Title = "AddItem";
+}
+
+<h2>Add Item</h2>
+@using (Html.BeginForm("AddItem", "Shop"))
+{
+<label>Name of new item: </label>
+<input type="text" name="NameOfItem" /><br />
+<label>Description of drug: </label>
+<input type="text" name="description"><br />
+<label>Price: </label>
+<input type="number" min="0" name="price" /><br />
+<label>Quantity Available: </label>
+<input type="number" min="0" name="QuantityNumber" />
+<br />
+<input type="submit" name="Save" value="SAVE" /><br />
+<input type="button" formaction="Index" value="Cancel" />
+}
+

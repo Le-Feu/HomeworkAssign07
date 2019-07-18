@@ -5,14 +5,13 @@
     ViewBag.Title = "Index";
 }
 
-@using (Html.BeginForm())
-{
+
     <h2>Drug Store</h2>
     <br />
     <button onclick="location.href='@Url.Action("AddItem","Shop")';return false;">Add Item</button>
 <br />
     <a href="">Part 2....</a><br />
-    @foreach (var x in Model)
+     @foreach (var x in Model)
     {
         <table>
             <tr>
@@ -34,4 +33,4 @@
     <input type="button" value="Sort by Price" formaction="SortPrice" />
     <input type="button" value="Sort by Quantity" formaction="SortQuantity" />
     <input type="button" value="Total items" formaction="TotalItems" />
-}
+

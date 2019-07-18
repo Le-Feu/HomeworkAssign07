@@ -12,6 +12,14 @@ namespace _18064249_HwAss07.ViewModel
         private double mPrice;
         private int mQuantityAvailable;
 
+        public ShowItemViewModel()
+        {
+            mName = "No name";
+            mDescription = "No description";
+            mPrice = 0.00;
+            mQuantityAvailable = 0;
+        }
+
         public string Name { get => mName; set => mName = value; }
         public string Description { get => mDescription; set => mDescription = value; }
         public double Price { get => mPrice; set => mPrice = value; }
@@ -19,8 +27,8 @@ namespace _18064249_HwAss07.ViewModel
 
         public ShowItemViewModel(string Name, string Description, double Price,int QuantityAvailable)
         {
-            mName = Name;
-            mDescription = Description;
+            mName= Name;
+            mDescription= Description;
             mPrice = Price;
             mQuantityAvailable = QuantityAvailable;
         }
